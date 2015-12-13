@@ -228,7 +228,8 @@ include_recipe 'nginx'
 template "/etc/nginx/sites-available/#{app_name}" do
   source    'nginx_configuration.erb'
   variables socket_file: "#{app_path}/shared/tmp/sockets/puma.sock",
-            app_path:    app_path
+            app_path:    app_path,
+            domains:     node['rails_app_server']['domains']
 end
 
 directory '/etc/nginx/ssl' do
