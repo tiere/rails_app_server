@@ -14,6 +14,7 @@ default['rails_app_server']['devise_secret_key']    = nil
 default['rails_app_server']['mail_domain']          = nil
 default['rails_app_server']['mail_user_name']       = nil
 default['rails_app_server']['mail_password']        = nil
+default['rails_app_server']['domains']              = []
 
 # Rbenv and Ruby
 default['rbenv']['group_users'] = [node['rails_app_server']['user']]
