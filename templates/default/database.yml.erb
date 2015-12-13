@@ -1,0 +1,6 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: <%= node['application']['database']['name'] %>
+  username: <%= node['application']['user'] %>

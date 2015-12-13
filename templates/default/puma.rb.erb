@@ -1,0 +1,7 @@
+shared_path = File.expand_path '../../../../shared', __FILE__
+tmp_path    = "#{shared_path}/tmp"
+
+environment ENV.fetch('ENVIRONMENT')
+pidfile "#{tmp_path}/pids/puma.pid"
+bind "unix://#{tmp_path}/sockets/puma.sock"
+stdout_redirect "#{shared_path}/log/puma.log", "#{shared_path}/log/puma_error.log", true
